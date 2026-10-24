@@ -1,0 +1,27 @@
+{
+  "name": "opencode-whisper-local",
+  "version": "0.1.0",
+  "description": "Private, local whisper.cpp voice dictation for OpenCode V2.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manojp99/opencode-whisper.git"
+  },
+  "homepage": "https://github.com/manojp99/opencode-whisper#readme",
+  "bugs": { "url": "https://github.com/manojp99/opencode-whisper/issues" },
+  "exports": {
+    ".": "./index.js",
+    "./tui": "./tui.js"
+  },
+  "files": ["index.js", "tui.js", "lib/", "scripts/download-model.js", "README.md", "LICENSE"],
+  "scripts": {
+    "setup:model": "node scripts/download-model.js",
+    "test": "node --test test/*.test.js",
+    "check": "node --check index.js && node --check tui.js && node --check lib/config.js && node --check lib/process.js && node --check lib/dictation.js && npm test",
+    "prepublishOnly": "npm run check"
+  },
+  "engines": { "node": ">=18.18.0" },
+  "keywords": ["opencode", "opencode-v2", "whisper.cpp", "voice", "dictation", "speech-to-text"],
+  "publishConfig": { "access": "public" }
+}

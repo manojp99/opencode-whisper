@@ -1,0 +1,10 @@
+node_modules/
+.DS_Store
+.env
+.env.*
+*.wav
+*.bin
+*.part
+*.tgz
+.local/
+coverage/
